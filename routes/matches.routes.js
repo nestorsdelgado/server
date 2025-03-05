@@ -36,7 +36,7 @@ router.get('/matches', async (req, res, next) => {
 });
 
 
-// GET /api/matches/:matchId -  Retrieves specific match // 113476054450624509 -> Final Winter 2025
+// GET /api/matches/:matchId -  Retrieves specific match // 113476054450624509 -> Final Winter 2025 // Can get games of the specific match
 router.get('/matches/:matchId', async (req, res) => {
 
     const { matchId } = req.params;
@@ -47,13 +47,37 @@ router.get('/matches/:matchId', async (req, res) => {
                 "x-api-key": API_KEY
             },
             params: {
-                hl: "en-US",
+                hl: "es-ES",
                 id: matchId
             }
         });
 
         if (!response.data.data.event) {
             return res.status(404).json({ message: "Match not found" });
+        }
+
+        res.json(response.data.data.event);
+    } catch (error) {
+        console.error("Error fetching match details from LoLEsports API:", error.response?.data || error);
+        res.status(500).json({ message: "Failed to fetch match details" });
+    }
+});
+
+// GET /api/live -  Retrieves live
+router.get('/live', async (req, res) => {
+
+    try {
+        const response = await axios.get("https://esports-api.lolesports.com/persisted/gw/getLive", {
+            headers: {
+                "x-api-key": API_KEY
+            },
+            params: {
+                hl: "es-ES"
+            }
+        });
+
+        if (!response.data.data.event) {
+            return res.status(404).json({ message: "Matches not found" });
         }
 
         res.json(response.data.data.event);

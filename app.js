@@ -25,6 +25,10 @@ app.use('/api', matchesRoutes);
 const teamsRoutes = require('./routes/teams.routes');
 app.use('/api', teamsRoutes);
 
+// Players route
+const playersRoutes = require('./routes/players.routes');
+app.use('/api', playersRoutes);
+
 const indexRoutes = require("./routes/index.routes");
 app.use("/api", indexRoutes);
 
