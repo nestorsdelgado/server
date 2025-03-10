@@ -1,0 +1,12 @@
+{
+    "Ligas": [
+      {
+        "Nombre": "Mi liga",
+        "id": 1
+      },
+      {
+        "Nombre": "Mi liga 2",
+        "id": 2
+      }
+    ]
+}

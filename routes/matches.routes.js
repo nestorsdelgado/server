@@ -2,8 +2,6 @@ const router = require('express').Router();
 const axios = require('axios');
 const dotev = require('dotenv').config();
 
-// const mongoose = require("mongoose");
-//const PANDA_SCORE_API_TOKEN = process.env.PANDA_SCORE_API_TOKEN;
 const API_KEY = process.env.LOLESPORTS_API_KEY
 
 const LEC_ID = "98767991302996019"; // LEC id

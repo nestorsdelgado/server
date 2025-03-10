@@ -1,15 +1,10 @@
+// https://vickz84259.github.io/lolesports-api-docs/
+
 const router = require('express').Router();
 const axios = require('axios');
 const dotev = require('dotenv').config();
 
-// const mongoose = require("mongoose");
-//const PANDA_SCORE_API_TOKEN = process.env.PANDA_SCORE_API_TOKEN;
 const API_KEY = process.env.LOLESPORTS_API_KEY
-
-const Leagues = require('../models/Leagues.model');
-const Videogame = require('../models/Videogame.model');
-const Series = require('../models/Series.model');
-
 
 // GET /api/leagues -  Retrieves all of the leagues
 router.get('/leagues', async (req, res, next) => {
