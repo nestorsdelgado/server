@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const axios = require('axios');
 const mongoose = require('mongoose');
-const User = require('../models/user.model');
+const User = require('../models/User.model');
 const MyLeagues = require('../models/MyLeagues.model');
 const auth = require('../middleware/auth');
 require('dotenv').config();
