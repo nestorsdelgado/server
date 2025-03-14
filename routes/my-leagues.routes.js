@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const MyLeagues = require('../models/myLeagues.model');
+const MyLeagues = require('../models/MyLeagues.model');
 const UserLeague = require('../models/UserLeague.model');
 const auth = require('../middleware/auth');
 
