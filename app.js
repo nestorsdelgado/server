@@ -53,6 +53,10 @@ app.use('/api', playersRoutes);
 const transactionsRoutes = require('./routes/transactions.routes');
 app.use('/api', transactionsRoutes);
 
+// Gemini AI Chat
+const geminiRoutes = require('./routes/gemini.routes');
+app.use('/gemini', geminiRoutes);
+
 const indexRoutes = require("./routes/index.routes");
 app.use("/api", indexRoutes);
 
